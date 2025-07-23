@@ -1,10 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@700&display=swap');
+
 /* Загальні стилі */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #121212;
-    color: #e0e0e0;
-    margin: 0;
-    line-height: 1.6;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+background-color: #121212;
+color: #e0e0e0;
+margin: 0;
+line-height: 1.6;
+background-image: url('../img/background.avif');
+background-size: cover; 
+background-repeat: no-repeat; 
+background-attachment: fixed; 
 }
 
 .container {
@@ -13,33 +19,70 @@ body {
     padding: 20px;
 }
 
-/* Хедер та навігація */
+/* ==== Header ==== */
+.site-header {
+  background: #1a1a1a;
+  border-bottom: 2px solid #d4af37;
+  padding: 20px 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* ==== Логотип ==== */
+.site-header .logo-css {
+  font-family: 'Cinzel', serif;
+  font-size: 2rem;
+  color: #d4af37;
+  text-decoration: none;
+  margin-bottom: 15px;
+}
+
 header {
     background-color: #1f1f1f;
-    padding: 20px 40px;
-    text-align: center;
+    padding: 15px 40px;
     border-bottom: 3px solid #c49b3b;
+    
+    /* Додані властивості для вирівнювання */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header h1 {
-    margin: 0;
-    color: #c49b3b;
-    font-size: 2.5em;
+/*
+==============================
+СТИЛІ ДЛЯ КОЛЬОРОВОЇ НАВІГАЦІЇ
+==============================
+*/
+
+/* Загальний стиль для всіх посилань в навігації */
+.nav-link {
+    padding: 5px 10px;
+    border-radius: 5px;
     text-transform: uppercase;
-    letter-spacing: 2px;
+    font-weight: bold;
+    transition: all 0.3s ease;
 }
 
-nav a {
-    color: #e0e0e0;
-    text-decoration: none;
-    margin: 0 15px;
-    font-size: 1.1em;
-    transition: color 0.3s;
+/* Колір для кожної категорії */
+.nav-home { color: #E0E0E0; }      /* ⚪ Головна - нейтральний білий */
+.nav-gods { color: #FFD700; }      /* ✨ Боги - яскраво-золотий */
+.nav-regions { color: #8FBC8F; }   /* 🌳 Регіони - зелений, колір природи */
+.nav-news { color: #6495ED; }      /* 📖 Новини - інформаційний синій */
+.nav-register { color: #FFA07A; }  /* 🔥 Реєстрація - теплий помаранчевий */
+
+
+/* Ефекти при наведенні миші */
+.nav-link:hover {
+    color: #121212; /* Колір тексту при наведенні - темний */
 }
 
-nav a:hover {
-    color: #c49b3b;
-}
+.nav-home:hover { background-color: #E0E0E0; }
+.nav-gods:hover { background-color: #FFD700; }
+.nav-regions:hover { background-color: #8FBC8F; }
+.nav-news:hover { background-color: #6495ED; }
+.nav-register:hover { background-color: #FFA07A; }
+
 
 /* Головний контент */
 main section {
@@ -158,3 +201,312 @@ footer {
     background-color: #1f1f1f;
     border-top: 1px solid #333;
 }
+
+/* Існуючі стилі... (залиште їх) */
+
+/* Додайте або замініть ці стилі */
+
+/* Головна сторінка */
+.world-intro {
+    background: linear-gradient(rgba(18, 18, 18, 0.7), rgba(18, 18, 18, 0.7)), url('../img/main-bg.jpg'); /* Покладіть фонове зображення в /img/ */
+    background-size: cover;
+    background-position: center;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 20px;
+}
+
+.intro-content h2 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+}
+
+.intro-content p {
+    font-size: 1.3em;
+    max-width: 700px;
+    margin-bottom: 30px;
+}
+
+/* Галерея богів */
+.gods-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 25px;
+}
+
+.god-gallery-card {
+    text-decoration: none;
+    color: #e0e0e0;
+    background: #1f1f1f;
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    border: 1px solid #333;
+}
+
+.god-gallery-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 20px #c49b3b;
+}
+
+.god-gallery-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    display: block;
+}
+
+.god-card-name {
+    font-size: 1.4em;
+    font-weight: bold;
+    padding: 15px;
+    text-align: center;
+    background: #1a1a1a;
+}
+
+
+/* Сторінка окремого бога */
+.character-page {
+    background: #1f1f1f;
+    padding: 30px;
+    border-radius: 8px;
+}
+
+.character-header {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.character-img {
+    width: 250px;
+    height: 250px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 5px solid #c49b3b;
+    margin-bottom: 20px;
+}
+
+.character-header h1 {
+    font-size: 3em;
+    color: #c49b3b;
+    margin: 0;
+}
+
+.character-title {
+    font-size: 1.2em;
+    color: #aaa;
+    margin-top: 5px;
+}
+
+.character-details h3 {
+    color: #c49b3b;
+    border-bottom: 2px solid #333;
+    padding-bottom: 10px;
+    margin-top: 30px;
+}
+
+.character-details ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.character-details ul li {
+    padding: 5px 0;
+}
+
+ul.abilities li {
+    background: #2a2a2a;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-left: 4px solid #c49b3b;
+    border-radius: 4px;
+}
+
+/* Сторінка регіонів */
+.region-section {
+    display: flex;
+    gap: 30px;
+    background: #1f1f1f;
+    padding: 25px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    align-items: center;
+}
+
+.region-img {
+    width: 300px;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 5px;
+    border: 3px solid #444;
+}
+
+.region-info h3 {
+    color: #c49b3b;
+    margin-top: 0;
+}
+.region-info ul {
+    padding-left: 20px;
+}
+
+/* Сторінка новин */
+.news-feed {
+    max-width: 800px;
+    margin: 0 auto;
+}
+.news-item {
+    background: #1f1f1f;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.news-item h3 {
+    margin-top: 0;
+    color: #c49b3b;
+}
+.news-date {
+    font-size: 0.9em;
+    color: #888;
+    margin-bottom: 15px;
+}
+
+/*
+==============================
+СТИЛІ ДЛЯ CSS ЛОГОТИПУ
+==============================
+*/
+
+.logo-css {
+    font-family: 'Cinzel', serif; /* Застосовуємо наш новий шрифт */
+    font-size: 2.5em; /* Розмір тексту */
+    font-weight: 700;
+    text-decoration: none; /* Прибираємо підкреслення посилання */
+    color: #c49b3b; /* Базовий золотий колір */
+    text-transform: uppercase; /* Всі літери великі */
+    letter-spacing: 4px; /* Відстань між літерами */
+    padding: 10px 0;
+    position: relative; /* Потрібно для декоративних ліній */
+    transition: text-shadow 0.3s;
+}
+
+.logo-css:hover {
+    text-shadow: 0 0 10px #c49b3b; /* Ефект світіння при наведенні */
+}
+
+/* Декоративні лінії зверху та знизу логотипу */
+.logo-css::before,
+.logo-css::after {
+    content: '';
+    position: absolute;
+    width: 60%; /* Ширина ліній */
+    height: 2px;
+    background-color: #c49b3b;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.4s;
+}
+
+.logo-css::before {
+    top: 0; /* Лінія зверху */
+}
+
+.logo-css::after {
+    bottom: 0; /* Лінія знизу */
+}
+
+/* Анімація ліній при наведенні */
+.logo-css:hover::before,
+.logo-css:hover::after {
+    width: 100%;
+}
+
+.success-message {
+    text-align: center;
+    background-color: #1f1f1f;
+    padding: 40px;
+    border-radius: 8px;
+}
+
+/* Сторінка пантеонів */
+.pantheon-card {
+    background-color: #1f1f1f;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    overflow: hidden;
+    border: 1px solid #333;
+}
+.pantheon-header {
+    padding: 20px;
+    text-align: center;
+    background-size: cover;
+    background-position: center;
+}
+.pantheon-header h3 {
+    color: #fff;
+    font-size: 2em;
+    text-shadow: 2px 2px 4px #000;
+    margin: 0;
+}
+/* Додайте фонові зображення для кожного пантеону в папку /img */
+.olympus-bg { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/olympus-bg.jpg'); }
+.nile-bg { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/nile-bg.jpg'); }
+.valhalla-bg { background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('../img/valhalla-bg.jpg'); }
+
+.pantheon-body {
+    padding: 25px;
+}
+.pantheon-body p {
+    margin-bottom: 15px;
+}
+.pantheon-body strong {
+    color: #c49b3b;
+}
+
+/* Новий колір для посилання "Пантеони" */
+.nav-pantheons { color: #BA55D3; } /* 💜 Фіолетовий, колір влади */
+.nav-pantheons:hover { background-color: #BA55D3; }
+
+/* Сторінка Бестіарію */
+.creature-card {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+    border-left: 5px solid #c49b3b;
+}
+.creature-card img {
+    width: 150px;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid #444;
+}
+.creature-info h3 {
+    margin-top: 0;
+    color: #c49b3b;
+}
+/* Новий колір для посилання "Бестіарій" */
+.nav-bestiary { color: #CD5C5C; } /* 👹 Червоний, колір істот */
+.nav-bestiary:hover { background-color: #CD5C5C; }
+
+/* Сторінка FAQ */
+.faq-item {
+    background-color: #1f1f1f;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+.faq-item h4 {
+    margin-top: 0;
+    color: #c49b3b;
+    font-size: 1.4em;
+}
+/* Новий колір для посилання "FAQ" */
+.nav-faq { color: #4682B4; } /* ❓ Сталевий синій */
+.nav-faq:hover { background-color: #4682B4; }

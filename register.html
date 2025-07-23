@@ -5,51 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Реєстрація - Divine War</title>
     <link rel="stylesheet" href="css/style.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 </head>
 <body>
 
-    <header>
-        <h1>Попередня реєстрація</h1>
-        <nav>
-            <a href="index.html">Головна</a>
-            <a href="gods.html">Боги</a>
-            <a href="register.html">Реєстрація</a>
-        </nav>
-    </header>
+    <header class="site-header">
+       <a href="index.html" class="logo-css">Divine War</a>
+       <nav>
+    <a href="index.html" class="nav-link nav-home">Головна</a>
+    <a href="gods.html" class="nav-link nav-gods">Боги</a>
+    <a href="regions.html" class="nav-link nav-regions">Регіони</a>
+    <a href="news.html" class="nav-link nav-news">Новини</a>
+    <a href="register.html" class="nav-link nav-register">Реєстрація</a>
+</nav>
+   </header>
+
 
     <main class="container">
+    <form class="register-form" id="registerForm">
         <h2>Зарезервуйте своє місце у битві!</h2>
         <p>Заповніть форму, щоб отримати ексклюзивні бонуси на старті гри.</p>
-        
-        <form class="register-form" action="#">
-            <label for="email">Ваш Email:</label>
-            <input type="email" id="email" name="email" required>
-            
-            <label for="nickname">Бажаний нікнейм:</label>
-            <input type="text" id="nickname" name="nickname" required>
-            
-            <label for="god">Оберіть вашого бога:</label>
-            <select id="god" name="god">
-                <option value="zeus">Зевс</option>
-                <option value="aphrodite">Афродіта</option>
-                <option value="ares">Арес</option>
-                <option value="gaia">Гея</option>
-                <option value="ra">Ра</option>
-                <option value="amun">Амон</option>
-                <option value="seth">Сетх</option>
-                <option value="nephthys">Нефтида</option>
-                <option value="odin">Одін</option>
-                <option value="thor">Тор</option>
-                <option value="loki">Локі</option>
+
+        <label for="email">Ваш Email:</label>
+        <input type="email" id="email" name="email" required>
+
+        <label for="nickname">Бажаний нікнейм:</label>
+        <input type="text" id="nickname" name="nickname" required>
+
+        <label for="god">Оберіть вашого бога:</label>
+        <select id="god" name="god">
             </select>
-            
-            <button type="submit" class="cta-button">Відправити</button>
-        </form>
-    </main>
+
+        <button type="submit" class="cta-button">Відправити</button>
+    </form>
+
+    <div class="success-message" id="successMessage" style="display: none;">
+        <h2>✅ Дякуємо!</h2>
+        <p>Ваша заявка прийнята. Ми повідомимо вас про старт гри на вказаний Email. До зустрічі на полі бою!</p>
+        <a href="index.html" class="cta-button">На головну</a>
+    </div>
+</main>
 
     <footer>
         <p>&copy; 2025 Divine War. Усі права захищені.</p>
     </footer>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+  AOS.init();
+</script>
+
+<script>
+    const form = document.getElementById('registerForm');
+    const successMessage = document.getElementById('successMessage');
+
+    form.addEventListener('submit', function(event) {
+        event.preventDefault(); // Забороняємо стандартну відправку форми
+
+        // Ховаємо форму і показуємо повідомлення
+        form.style.display = 'none';
+        successMessage.style.display = 'block';
+    });
+</script>
 
 </body>
 </html>
